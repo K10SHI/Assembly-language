@@ -1,0 +1,50 @@
+
+; You may customize this and other start-up templates;
+; The location of this template is c:\emu8086\inc\0_com_template.txt
+
+org 100h
+
+;ex2.asm
+;prints 'A' one at a time
+;starting at row 0, column 0
+
+mov ax, 0b800h
+mov ds, ax
+mov di, 0
+mov cx, 5
+
+print:
+mov bx[di], 41h
+push cx
+mov cx, 0ffffh
+
+delay:
+push cx
+mov cx, 0fffh
+
+dugay: add di, 2
+mov bx[di], 41h
+push cx
+mov cx, 0ffffh
+pop cx
+loop dugay
+
+pop cx
+
+loop delay
+
+pop cx
+
+loop print
+
+int 20h
+ret
+
+
+
+
+
+
+
+
+; [SOURCE]: C:\Users\USER\OneDrive\Desktop\assembly language\Addressing Modes\Examples\EX1\ex1.asm

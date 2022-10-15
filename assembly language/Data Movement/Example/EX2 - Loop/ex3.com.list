@@ -1,0 +1,59 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+ex3.com -- emu8086 assembler version: 4.08  
+ 
+[ 10/11/2022  --  7:42:57 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       ; You may customize this and other start-up templates;
+[   3]        :                                       ; The location of this template is c:\emu8086\inc\0_com_template.txt
+[   4]        :                                       
+[   5]        :                                       org 100h
+[   6]        :                                       
+[   7]        :                                       ;es3.asm
+[   8]        :                                       ;run 'A' across the screen
+[   9]    0100: B8 00 B8                              mov ax,0b800h
+[  10]    0103: 8E D8                                 mov ds, ax
+[  11]    0105: BF 00 00                              mov di, 0
+[  12]    0108: B9 50 00                              mov cx, 80
+[  13]        :                                       
+[  14]    010B:                                       print:
+[  15]    010B: 51                                    push cx
+[  16]    010C: B9 FF FF                              mov cx,0ffffh
+[  17]    010F:                                       delay:
+[  18]    010F: 51                                    push cx
+[  19]    0110: B9 FF 00                              mov cx,0ffh
+[  20]    0113: 83 C7 02                              dugay:add di, 2
+[  21]    0116: C6 01 41                              mov bx[di], 41h
+[  22]    0119: C6 01 20                              mov bx[di],' '
+[  23]    011C: 51                                    push cx
+[  24]    011D: B9 FF FF                              mov cx,0ffffh
+[  25]    0120: 59                                    pop cx
+[  26]    0121: E2 F0                                 loop dugay
+[  27]    0123: 59                                    pop cx
+[  28]    0124: E2 E9                                 loop delay
+[  29]        :                                       
+[  30]    0126: 59                                    pop cx
+[  31]    0127: E2 E2                                 loop print
+[  32]        :                                       
+[  33]    0129: CD 20                                 int 20h
+[  34]        :                                       
+[  35]    012B: C3                                    ret
+[  36]        :                                       
+[  37]        :                                       
+[  38]        :                                       
+[  39]        :                                       
+[  40]        :                                       
+[  41]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

@@ -1,0 +1,74 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+prob1.com -- emu8086 assembler version: 4.08  
+ 
+[ 9/30/2022  --  12:03:21 AM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       ;prob1.asm
+[   3]        :                                       ;display your complete first name, with attributes
+[   4]        :                                       ;at the center of the screen
+[   5]        :                                       
+[   6]        :                                       
+[   7]        :                                       
+[   8]        :                                       
+[   9]        :                                       org 100h                    ;this directive required for a simple 1 segment .com program.
+[  10]        :                                       
+[  11]    0100: B8 00 B8                              mov ax, 0b800h              ;set AX to hexadecimal value of B800h.
+[  12]        :                                       
+[  13]    0103: 8E D8                                 mov ds, ax                  ;copy value of AX to DS.
+[  14]        :                                       
+[  15]    0105: BF C4 07                              mov di, (160*12) + (34*2)   ;set the screen to the center
+[  16]        :                                       
+[  17]    0108: C6 01 4D                              mov bx[di], 4Dh             ;set bx[di] to ASCII code - HEX of 'M'= 4DH
+[  18]    010B: C6 41 01 41                           mov bx[di+1], 41h           ;set atributes using HEX CODE of red + blue = 41h
+[  19]        :                                       
+[  20]    010F: C6 41 02 45                           mov bx[di+2], 45h           ;set bx[di+2] to ASCII code - HEX of 'E'= 45H
+[  21]    0113: C6 41 03 40                           mov bx[di+3], 40h           ;set atributes using HEX CODE of red + black = 40h
+[  22]        :                                       
+[  23]    0117: C6 41 04 4C                           mov bx[di+4], 4Ch           ;set bx[di+4] to ASCII code - HEX of 'L'= 4CH
+[  24]    011B: C6 41 05 04                           mov bx[di+5], 04h           ;set atributes using HEX CODE of black + red = 04h
+[  25]        :                                       
+[  26]    011F: C6 41 06 56                           mov bx[di+6], 56h           ;set bx[di+6] to ASCII code - HEX of 'V'= 56H
+[  27]    0123: C6 41 07 14                           mov bx[di+7], 14h           ;set atributes using HEX CODE of blue + red = 14h
+[  28]        :                                       
+[  29]    0127: C6 41 08 49                           mov bx[di+8], 49h           ;set bx[di+8] to ASCII code - HEX of 'I'= 49H
+[  30]    012B: C6 41 09 0E                           mov bx[di+9], 0Eh           ;set atributes using HEX CODE of black + yellow = 0Eh
+[  31]        :                                       
+[  32]    012F: C6 41 0A 4E                           mov bx[di+10], 4Eh          ;set bx[di+10] to ASCII code - HEX of 'N'= 10H
+[  33]    0133: C6 41 0B 30                           mov bx[di+11], 30h          ;set atributes using HEX CODE of cyan + black = 30h
+[  34]        :                                       
+[  35]    0137: C6 41 0C 20                           mov bx[di+12], 20h          ;set bx[di+12] to ASCII code - HEX of 'SPACE'= 20H
+[  36]        :                                       
+[  37]    013B: C6 41 0E 52                           mov bx[di+14], 52h          ;set bx[di+14] to ASCII code - HEX of 'R'= 52H
+[  38]    013F: C6 41 0F 04                           mov bx[di+15], 04h          ;set atributes using HEX CODE of black + red = 04h
+[  39]        :                                       
+[  40]    0143: C6 41 10 45                           mov bx[di+16], 45h          ;set bx[di+16] to ASCII code - HEX of 'E'= 45H
+[  41]    0147: C6 41 11 51                           mov bx[di+17], 51h          ;set atributes using HEX CODE of magenta + blue = 51h
+[  42]        :                                       
+[  43]    014B: C6 41 12 59                           mov bx[di+18], 59h          ;set bx[di+18] to ASCII code - HEX of 'Y'= 59H
+[  44]    014F: C6 41 13 03                           mov bx[di+19], 03h          ;set atributes using HEX CODE of black + cyan = 03h
+[  45]        :                                       
+[  46]        :                                       
+[  47]        :                                       
+[  48]    0153: CD 20                                 int 20h                     ;display character
+[  49]        :                                       
+[  50]    0155: C3                                    ret                         ;returns to operating system.
+[  51]        :                                       
+[  52]        :                                       
+[  53]        :                                       
+[  54]        :                                       
+[  55]        :                                       
+[  56]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
