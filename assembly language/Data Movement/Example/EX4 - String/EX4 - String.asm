@@ -1,0 +1,32 @@
+;ex5.asm
+;prints 'ABCD' using DB
+
+org 100h
+
+mov ax, cs
+mov ds, ax
+
+mov ax, 0b800h
+mov es, ax
+
+mov si, offset string
+
+mov di, 0
+mov cx, 4
+
+print:
+
+mov al, bx[si]
+mov es:[di], al
+inc si
+inc di, 2
+loop print
+
+
+string db 'ABCD','$'
+
+ret
+
+
+
+

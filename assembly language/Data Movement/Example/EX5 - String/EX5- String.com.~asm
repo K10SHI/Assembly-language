@@ -1,0 +1,45 @@
+;ex5.asm
+;prints 'ABCD' using DB
+
+org 100h
+
+mov ax, cs
+mov ds, ax
+mov cx , 80
+
+
+print:
+
+
+; load address of the string
+
+lea dx, string
+
+
+;output the string
+;loaded in dx
+
+mov ah, 09h
+int 21h
+
+
+;interrupt to exit
+
+mov ah,4CH
+
+;loop print     ; It loop the print just remove the ';' in the loop
+
+int 21h
+
+string db 'Hello WorldZ!  ', '$'
+
+ret
+
+
+
+
+
+
+
+
+; [SOURCE]: C:\Users\USER\OneDrive\Desktop\assembly language\Data Movement\Example\EX4 -A - String\EX4 - A - String.asm
